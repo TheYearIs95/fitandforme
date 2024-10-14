@@ -57,7 +57,7 @@ require_once "vendor/autoload.php";
                 width="320" height="200" style="border:0;" allowfullscreen="" loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"></iframe>
             <p class="location">4 Lot. les Saules, <br> 45460 Bray-Saint-Aignan <br>
-                <img src="img/appel.png" alt="Phone icon"> 06 99 87 46 71 <br>
+                <img src="img/appel.png" alt="Phone icon"> 06 9 9 87 46 71 <br>
                 <img src="img/appel.png" alt="Phone icon"> 06 30 23 20 22</p>
         </div>
     </footer>
