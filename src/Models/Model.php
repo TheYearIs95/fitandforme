@@ -2,14 +2,16 @@
 
 namespace App\Models;
 
-class Model
+use App\Host\Host;
+
+class Model extends Host
 {
     protected $PDO;
     protected string $table;
 
-    public function __construct($PDO)
+    public function __construct()
     {
-        $this->PDO = $PDO;
+        $this->PDO = Host::getInstance();
     }
 
     public function findAll()

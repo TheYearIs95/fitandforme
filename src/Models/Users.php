@@ -10,9 +10,9 @@ class Users extends Model
     public string $email;
     public string $password;
 
-    public function __construct($PDO)
+    public function __construct()
     {
-        parent::__construct($PDO);
+        parent::__construct();
         $this->table = "users";
     }
 }

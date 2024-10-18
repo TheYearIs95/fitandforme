@@ -1,0 +1,148 @@
+.create-user-title {
+    padding: 64px 0 0;
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+}
+
+.copyright {
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.legal-statement {
+    font-size: 10px;
+    font-weight: 300;
+}
+
+/* ############################################################## Code table ################################################################### */
+
+.users-table {
+    width: 60vw;
+}
+
+tr,
+td,
+tbody {
+    display: block;
+}
+
+thead {
+    display: none;
+}
+
+tr {
+    padding-bottom: 20px;
+}
+
+td {
+    padding: 10px 10px 0;
+    text-align: center;
+}
+
+th {
+    text-align: center;
+    font-weight: 700;
+}
+
+thead th {
+    background-color: #333;
+    color: #f4f4f4;
+    border: 1px solid black;
+}
+
+.button {
+    line-height: 1;
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 5px;
+    color: #f4f4f4;
+    padding: 8px;
+    background-color: #535353;
+}
+
+.add-user-button {
+    border: none;
+    border-radius: 10px;
+    color: #f4f4f4;
+    background-color: #ff7828;
+    margin-bottom: 20px;
+    padding: 15px;
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-decoration: none;
+    color: #f4f4f4;
+}
+
+.add-user-button:hover {
+    background-color: #333;
+}
+
+.button:hover {
+    background-color: #ff7828;
+    color: #333;
+}
+
+@media (min-width: 460px) {
+    td {
+        text-align: left;
+    }
+
+    td:before {
+        display: inline-block;
+        text-align: right;
+        width: 140px;
+    }
+
+    .select {
+        padding-left: 10px;
+        text-align: center;
+    }
+}
+
+@media (min-width: 720px) {
+    table {
+        display: table;
+    }
+
+    tr {
+        display: table-row;
+    }
+
+    td,
+    th {
+        display: table-cell;
+    }
+
+    tbody {
+        display: table-row-group;
+    }
+
+    thead {
+        display: table-header-group;
+    }
+
+    td {
+        border: 1px solid #333;
+    }
+
+    td:before {
+        display: none;
+    }
+
+    td,
+    th {
+        padding: 10px;
+    }
+
+    tr:nth-child(2n+2) td {
+        background-color: #cacaca;
+    }
+
+    .select {
+        padding: 10px;
+    }
+}
