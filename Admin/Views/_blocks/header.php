@@ -2,11 +2,11 @@
 
     <h1>Fit and Forme</h1>
     <nav class="nav-bar">
-        <a href="/Admin/Views/manage-user.php">Gérer les utilisateurs</a>
-        <a href="/Admin/Views/manage-course.php">Gérer les cours</a>
-        <a href="/Admin/Views/manage-event.php">Gérer les évènements</a>
-        <a href="/Admin/Views/manage-price.php">Gérer les tarifs</a>
-        <a href="/Admin/Views/manage-planning.php">Gérer le planning</a>
+        <a href="/user">Gérer les utilisateurs</a>
+        <a href="/course">Gérer les cours</a>
+        <a href="/event">Gérer les évènements</a>
+        <a href="/pricing">Gérer les tarifs</a>
+        <a href="/time">Gérer le planning</a>
     </nav>
 
     <button class="Btn">

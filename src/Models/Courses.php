@@ -11,9 +11,9 @@ class Courses extends Model
     public int $user_id;
     public int $time_id;
 
-    public function __construct($PDO)
+    public function __construct()
     {
-        parent::__construct($PDO);
+        parent::__construct();
         $this->table = "courses";
     }
 }

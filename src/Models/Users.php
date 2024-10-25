@@ -15,4 +15,12 @@ class Users extends Model
         parent::__construct();
         $this->table = "users";
     }
+    public function findAll()
+    {
+        $req = "SELECT $this->table.*, role_name FROM $this->table
+        JOIN roles ON roles.id = role";
+        $result = $this->PDO->prepare($req);
+        $result->execute();
+        return $result->fetchAll();
+    }
 }

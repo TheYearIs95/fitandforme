@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use App\Models\Users;
 
-class UserController
+class UserController extends MainController
 {
     private $object;
 
@@ -16,7 +16,7 @@ class UserController
     public function index()
     {
         $users = $this->object->findAll();
-        require "Admin/Views/manage-user.php"; 
+        require "Admin/Views/manage-user.php";
     }
 
     public function create()
@@ -24,16 +24,17 @@ class UserController
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $infos = [
                 'firstname' => $_POST["firstname"],
-                'lastname' => $_POST["lastname"],
-                'email' => $_POST["email"],
-                'role' => $_POST["role"],
-                'password' => $_POST["password"]
+                'lastname'  => $_POST["lastname"],
+                'email'     => $_POST["email"],
+                'role'      => $_POST["role"],
+                'password'  => $_POST["password"]
             ];
             $this->object->insert($infos);
-            // header("location:");
-        } else {
-            // require "view modify-user";
+            header("location: /user");
         }
+        $page_title     = "Ajouter utilisateur";
+        $button_value   = "Ajouter";
+        require "Admin/Views/modify-user.php";
     }
 
     public function update($id)
@@ -41,32 +42,31 @@ class UserController
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $infos = [
                 'firstname' => $_POST["firstname"],
-                'lastname' => $_POST["lastname"],
-                'email' => $_POST["email"],
-                'role' => $_POST["role"],
-                'password' => $_POST["password"]
+                'lastname'  => $_POST["lastname"],
+                'email'     => $_POST["email"],
+                'role'      => $_POST["role"],
+                'password'  => $_POST["password"]
             ];
             $this->object->update($infos, $id);
-            // header("location:")
+            header("location: /user");
         }
         $user = $this->object->find($id);
-        // require "view modify-user";
+        $page_title     = "Modifier utilisateur";
+        $button_value   = "Modifier";
+        require "Admin/Views/modify-user.php";
     }
 
     public function delete($id)
     {
         $user = $this->object->find($id);
+        $delete = "Voulez vous supprimer l'utilisateur' " . $user->firstname . " " . $user->lastname . " ?";
         if (isset($_POST["confirm"])) {
             $this->object->delete($id);
-            // header("location:") pour rediriger l'utilisateur
+            header("location: /user"); //pour rediriger l'utilisateur
         } elseif (isset($_POST["cancel"])) {
-            // header("location:") je redirige l'utilisateur s'il clique sur non
+            header("location: /user"); //pour rediriger l'utilisateur s'il clique sur non
         }
-        // require "view delete";
-    }
-
-    public function login()
-    {
-        require "Admin/Views/login.php";
+        $route = "/user";
+        require "Admin/Views/delete.php";
     }
 }

@@ -2,8 +2,15 @@
 
 namespace App\Controllers;
 
+use App\Host\Host;
 
-class MainController
+class MainController extends Host
 {
-    public function index() {}
+    protected Host $pdo;
+    public function __construct()
+    {
+        $this->pdo = Host::getInstance();
+    }
+    public function index() 
+    {}
 }

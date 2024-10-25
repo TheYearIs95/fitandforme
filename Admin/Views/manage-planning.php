@@ -19,57 +19,25 @@ include($_SERVER["DOCUMENT_ROOT"] . "/Admin/Views/_blocks/doctype.php");
                 <tr>
                     <th>#</th>
                     <th>Nom</th>
+                    <th>Horaires</th>
                     <th>Action</th>
                 </tr>
             </thead>
             <tbody>
+            <?php foreach ($times as $index => $time) { ?>
                 <tr>
-                    <td>1</td>
-                    <td>Gym posturale</td>
-                    <td class="select"><a href="modify-planning.php" class="button">Modifier</a></td>
+                    <td><?php echo $time->id ?></td>
+                    <td><?php echo $time->title ?></td>
+                    <td><?php echo substr($time->starting_time, 0, 5) . " - " . substr($time->ending_time, 0, 5); ?></td>
+                    <td class="select">
+                        <a href="/time/update/<?php echo $time->id; ?>" class="button">Modifier</a>
+                        <a href="/time/delete/<?php echo $time->id; ?>" class="button">Supprimer</a>
+                    </td>
                 </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Renforcement musculaire</td>
-                    <td class="select"><a href="modify-planning.php" class="button">Modifier</a></td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Step</td>
-                    <td class="select"><a href="modify-planning.php" class="button">Modifier</a></td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>Pound</td>
-                    <td class="select"><a href="modify-planning.php" class="button">Modifier</a></td>
-                </tr>
-                <tr>
-                    <td>5</td>
-                    <td>Zumba</td>
-                    <td class="select"><a href="modify-planning.php" class="button">Modifier</a></td>
-                </tr>
-                <tr>
-                    <td>6</td>
-                    <td>Renfo-stretching</td>
-                    <td class="select"><a href="modify-planning.php" class="button">Modifier</a></td>
-                </tr>
-                <tr>
-                    <td>7</td>
-                    <td>Danses urbaines</td>
-                    <td class="select"><a href="modify-planning.php" class="button">Modifier</a></td>
-                </tr>
-                <tr>
-                    <td>8</td>
-                    <td>Dance fit</td>
-                    <td class="select"><a href="modify-planning.php" class="button">Modifier</a></td>
-                </tr>
-                <tr>
-                    <td>9</td>
-                    <td>Cardio boxe</td>
-                    <td class="select"><a href="modify-planning.php" class="button">Modifier</a></td>
-                </tr>
+                <?php } ?>
             </tbody>
         </table>
+        <a href="/time/create" class="add-user-button">Ajouter séance</a>
     </main>
     </div>
     <?php

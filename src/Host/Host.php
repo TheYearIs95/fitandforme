@@ -8,7 +8,6 @@ use PDOException;
 class Host extends PDO
 {
     private static $instance;
-    // les informations de connexion
     private const DBHOST = "localhost";
     private const DBUSER = "root";
     private const DBPASS = "";

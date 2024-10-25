@@ -19,7 +19,7 @@ class Model extends Host
         $req = "SELECT * FROM $this->table";
         $result = $this->PDO->prepare($req);
         $result->execute();
-        return $result->fetchAll(\PDO::FETCH_OBJ);
+        return $result->fetchAll();
     }
 
     public function find($id)
@@ -55,15 +55,16 @@ class Model extends Host
             $result->bindValue(":$key", $value);
         }
         $result->execute();
+        return $this->PDO->lastInsertId();
     }
 
     public function update(array $infos, $id)
     {
         $setClause = [];
         foreach ($infos as $key => $value) {
-            $setClause = "$key = :$key";
+            $setClause[] = "$key = :$key";
         }
-        $setClauseStr = implode(", ", $setClause); // Str = string
+        $setClauseStr = implode(", ", $setClause);
 
         $req = "UPDATE $this->table SET $setClauseStr 
         WHERE id = :id";

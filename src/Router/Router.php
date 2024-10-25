@@ -33,7 +33,7 @@ class Router
         if ($params[0] != '') {
             //on a au moins un parametre
             //recuperer le nom du controller - Maj+namespace+controller
-            $controller = "\\App\\Controllers\\" . ucfirst(array_shift($params)) . 'Controller'; //BookController
+            $controller = "\\App\\Controllers\\" . ucfirst(array_shift($params)) . 'Controller';
             
             //instanciation du controller
             $controller = new $controller;
@@ -51,7 +51,7 @@ class Router
                 //si ya encore des parametres 
                 // (isset($params[0])) ? $controller->action($params) : $controller->action();
                 if (isset($params[0])) {
-                    $controller->$action($params);
+                    $controller->$action(...$params);
                 } else {
                     $controller->$action();
                 }

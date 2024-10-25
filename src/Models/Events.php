@@ -10,9 +10,9 @@ class Events extends Model
     public string $image;
     public int $user_id;
 
-    public function __construct($PDO)
+    public function __construct()
     {
-        parent::__construct($PDO);
+        parent::__construct();
         $this->table = "events";
     }
 }

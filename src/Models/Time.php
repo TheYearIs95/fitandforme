@@ -11,9 +11,18 @@ class Time extends Model
     public int $user_id;
     public int $course_id;
 
-    public function __construct($PDO)
+    public function __construct()
     {
-        parent::__construct($PDO);
+        parent::__construct();
         $this->table = "time";
+    }
+
+    public function findAll()
+    {
+        $req = "SELECT $this->table.*, courses.title FROM $this->table
+        JOIN courses ON courses.id = time.course_id";
+        $result = $this->PDO->prepare($req);
+        $result->execute();
+        return $result->fetchAll();
     }
 }
