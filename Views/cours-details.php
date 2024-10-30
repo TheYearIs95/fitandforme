@@ -1,4 +1,4 @@
-<?php 
+<?php
 require_once "vendor/autoload.php";
 ?>
 
@@ -10,13 +10,13 @@ require_once "vendor/autoload.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fit and Forme</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/x-icon" href="img/icon/favicon-32x32.png">
+    <link rel="icon" type="image/x-icon" href="/public//public/img/icon/favicon-32x32.png">
 
 </head>
 
 <body>
     <header class="header">
-        <a href="index.html" class="logo a-nav unbounded">Fit and Forme</a>
+        <a href="/Views/home.php" class="logo a-nav unbounded">Fit and Forme</a>
         <nav class="nav">
             <a class="a-nav" href="">Evenements</a>
             <a class="a-nav" href="">Planning</a>
@@ -38,8 +38,8 @@ require_once "vendor/autoload.php";
         <div>
             <div class="footer-section links footer-center">
                 <div class="footer-section social-media">
-                    <a href="https://www.facebook.com/fitandforme45/" class="social-networking"><img src="img/facebook.png" alt="Facebook"></a>
-                    <a href="https://www.instagram.com/fit_andforme/" class="social-networking"><img src="img/instagram.png" alt="Instagram"></a>
+                    <a href="https://www.facebook.com/fitandforme45/" class="social-networking"><img src="/public/img/facebook.png" alt="Facebook"></a>
+                    <a href="https://www.instagram.com/fit_andforme/" class="social-networking"><img src="/public/img/instagram.png" alt="Instagram"></a>
                 </div>
                 <ul>
                     <li><a href="cours.html">Cours</a></li>
@@ -57,11 +57,13 @@ require_once "vendor/autoload.php";
                 width="320" height="200" style="border:0;" allowfullscreen="" loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"></iframe>
             <p class="location">4 Lot. les Saules, <br> 45460 Bray-Saint-Aignan <br>
-                <img src="img/appel.png" alt="Phone icon"> 06 9 9 87 46 71 <br>
-                <img src="img/appel.png" alt="Phone icon"> 06 30 23 20 22</p>
+                <img src="/public/img/appel.png" alt="Phone icon"> 06 9 9 87 46 71 <br>
+                <img src="/public/img/appel.png" alt="Phone icon"> 06 30 23 20 22
+            </p>
         </div>
     </footer>
 
     <script src="./script.js"></script>
 </body>
-</html>    
+
+</html>

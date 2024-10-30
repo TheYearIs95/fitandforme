@@ -17,15 +17,15 @@ include($_SERVER["DOCUMENT_ROOT"] . "/Admin/Views/_blocks/doctype.php");
                 <label for="firstname">Prénom:</label> <br>
                 <input type="text" name="firstname" value="<?php if ($page_title === "Modifier utilisateur") {
                                                                 echo $user->firstname;
-                                                            } ?>"> <br>
+                                                            } ?>" required> <br>
                 <label for="lastname">Nom:</label> <br>
                 <input type="text" name="lastname" value="<?php if ($page_title === "Modifier utilisateur") {
                                                                 echo $user->lastname;
-                                                            } ?>"> <br>
+                                                            } ?>" required>
                 <label for="email">Email:</label> <br>
                 <input type="text" name="email" value="<?php if ($page_title === "Modifier utilisateur") {
                                                             echo $user->email;
-                                                        } ?>"> <br>
+                                                        } ?>" required> <br>
                 <label for="role">Rôle:</label> <br>
                 <select name="role" id="">
                     <option value="1">Utilisateur</option>
@@ -33,7 +33,7 @@ include($_SERVER["DOCUMENT_ROOT"] . "/Admin/Views/_blocks/doctype.php");
                 </select> <br>
                 <!-- Champ mot de passe qui s'affiche QUE si on est en train d'ajouter un utilisateur (if) -->
                 <label for="password">Mot de passe:</label> <br>
-                <input type="password" name="password"> <br>
+                <input type="password" name="password" required> <br>
                 <input class="modify-button" type="submit" name="" id="" value="<?= $button_value ?>">
             </form>
         </div>

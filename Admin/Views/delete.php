@@ -1,7 +1,7 @@
 <?php
 include($_SERVER["DOCUMENT_ROOT"] . "/Admin/Views/_blocks/doctype.php");
 ?>
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
 </head>
 
 <body>

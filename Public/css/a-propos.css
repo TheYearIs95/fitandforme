@@ -1,0 +1,103 @@
+.hero-section-a-propos {
+    position: absolute;
+    top: 0;
+    background: linear-gradient(21deg, white 50%, var(--fforange) 50%);
+    height: 100vh;
+    margin: 0vh auto 10vh;
+    width: 100%;
+    z-index: -1;
+}
+
+.header .a-nav {
+    color: black;
+}
+
+.burger .line,
+.burger::before,
+.burger::after {
+    background-color: rgb(0, 0, 0);
+}
+
+.about-us-section {
+    padding-top: 180px;
+    margin-bottom: 64px;
+}
+
+.about-us-text {
+    background-color: white;
+    border: 30px solid #ff7828;
+    padding: 16px;
+}
+
+.team-section {
+    margin-bottom: 120px;
+}
+
+.personal-card {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    margin-bottom: 64px;
+}
+
+.personal-photo img {
+    width: 100%;
+}
+
+.personal-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    font-size: 36px;
+    margin-left: 64px;
+}
+
+.personal-info p {
+    font-size: 16px;
+}
+
+.about-us-section h1,
+.team-section h2 {
+    margin-bottom: 32px;
+}
+
+/* ######################################### MEDIA QUERIES ########################################## */
+
+@media (max-width: 950px) {
+    .personal-card {
+        grid-template-columns: 1fr;
+    }
+
+    .personal-photo,
+    .personal-info {
+        width: 50%;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .personal-photo,
+    .personal-info {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .personal-info {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 640px) {
+    .personal-info {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 450px) {
+    .personal-info {
+        font-size: 24px;
+    }
+}
+
+
+/* ######################################### FIN MEDIA QUERIES ########################################## */

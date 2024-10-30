@@ -1,0 +1,33 @@
+.hero-section {
+    background: url(/public/img/img-header-evenements-v2.jpg) top center;
+}
+
+.events-subtitle {
+    margin-bottom: 32px;
+}
+
+.events-list {
+    list-style: inside url('/public//public/img/icon/gym.svg');
+}
+
+.events-list li::marker {
+    font-size: 24px;
+}
+
+.events-text {
+    margin-bottom: 32px;
+}
+
+.event-image {
+    width: 100%;
+    margin-bottom: 32px;
+}
+
+.event-article {
+    margin-bottom: 64px;
+}
+
+.events-names {
+    font-size: 20px;
+    font-weight: 600;
+}

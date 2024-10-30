@@ -69,4 +69,18 @@ class UserController extends MainController
         $route = "/user";
         require "Admin/Views/delete.php";
     }
+
+    public function login()
+    {
+        // if ($_SERVER["REQUEST_METHOD"] === "POST") {
+        //     $errors = [];
+        // }
+        header("location: /login");
+        // $login = $this->object->find();
+    }
+
+    public function logout()
+    {
+
+    }
 }

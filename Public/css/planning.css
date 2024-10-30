@@ -1,0 +1,208 @@
+.hero-section-background {
+    position: absolute;
+    top: 0;
+    background: linear-gradient(21deg, white 50%, #FF7828 50%);
+    height: 100vh;
+    margin: 0vh auto 10vh;
+    width: 100%;
+    z-index: -1;
+}
+
+.header .a-nav {
+    color: black;
+}
+
+.burger .line,
+.burger::before,
+.burger::after {
+    background-color: rgb(0, 0, 0);
+}
+
+.planning-section {
+    padding-top: 210px;
+    margin-bottom: 64px;
+}
+
+.planning-subtitle {
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom: 32px;
+}
+
+.notice-section {
+    display: flex;
+    justify-content: center;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    max-width: 1184px;
+    margin: 0 auto 32px;
+    gap: 16px;
+    row-gap: 32px;
+}
+
+.guidelines {
+    background-color: #f6f6f6;
+    padding: 4px 8px;
+    text-align: center;
+}
+
+.black-guideline {
+    background-color: #000000;
+    color: white;
+    font-weight: 500;
+}
+
+/* ################################################# Tableau Planning ################################################## */
+
+.planning {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    padding: 32px;
+    margin: 0 auto;
+    width: 80%;
+    border: 1px solid var(--fforange);
+    background-color: white;
+}
+
+.days {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+}
+
+.days-item {
+    width: 100%;
+    text-align: center;
+    padding: 16px;
+}
+
+.days-item--news {
+    position: relative;
+}
+
+.days-item--news::before {
+    content: "Nouveau !";
+    position: absolute;
+    top: 0;
+    left: 8px;
+    padding: 4px;
+    color: #fff;
+    transform: translateY(-100%);
+    font-size: 12px;
+    background: var(--fforange);
+}
+
+.days-name {
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    background-color: var(--fforange);
+}
+
+.days-hours {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--fforange);
+}
+
+.hours {
+    color: var(--fforange);
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.activity {
+    font-weight: 300;
+}
+
+/* ###################################################################################################################### */
+
+/* ################################################ Cotisations et tarifs ############################################### */
+
+.pricing-grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 64px;
+    margin: 0 auto 120px;
+    width: 80%;
+}
+
+.pricing-div {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 16px;
+    background-color: #f6f6f6;
+    /* line-height: 64px; */
+}
+
+.pricing-div-title {
+    font-family: var(--unbounded);
+    text-align: center;
+    grid-column: span 2;
+    margin-bottom: 32px;
+}
+
+.orange-pricing-div {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+    background-color: var(--fforange);
+    color: white;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.important-information {
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 32px;
+}
+
+.left-side {
+    border-right: 1px solid black;
+}
+
+.number-of-courses {
+    padding-inline: 4px;
+}
+
+.number-of-courses,
+.prices-of-courses {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+
+/* ############################################ MEDIA QUERIES ################################################# */
+
+@media (max-width: 900px) {
+    .planning {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 700px) {
+    .planning-subtitle {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 1100px) {
+    .pricing-grid-container {
+        grid-template-columns: 1fr;
+    }
+
+    .left-side, .right-side {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
+
+/* ############################################ FIN MEDIA QUERIES ############################################# */

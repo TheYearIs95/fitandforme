@@ -1,0 +1,770 @@
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --fforange: #FF7828;
+    --unbounded: "Unbounded", system-ui;
+    --worksans: "Work Sans", sans-serif;
+}
+
+.logo,
+.black-logo {
+    font-family: var(--unbounded);
+    font-weight: 900;
+    font-size: 32px;
+}
+
+.black-logo {
+    color: black;
+}
+
+.unbounded {
+    font-family: var(--unbounded);
+}
+
+.nav {
+    font-family: var(--worksans);
+    font-weight: 400;
+    display: flex;
+    gap: 64px;
+}
+
+.burger {
+    display: none;
+}
+
+header {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 45px;
+    z-index: 10;
+}
+
+.width-section {
+    position: relative;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding-inline: 16px;
+}
+
+a {
+    text-decoration: none;
+}
+
+main {
+    position: relative;
+}
+
+body {
+    font-family: var(--worksans);
+}
+
+.a-nav,
+.logo {
+    color: white;
+}
+
+.a-nav:hover {
+    opacity: 0.8;
+}
+
+.hero-section {
+    background: url(/public/img/img-header-accueil.jpeg) center right 27% / cover;
+    height: 100vh;
+    display: flex;
+    font-family: var(--unbounded);
+    margin-bottom: 88px;
+}
+
+.hero-section h1 {
+    color: white;
+    font-weight: 700;
+    font-size: 64px;
+    padding: 81px;
+    margin-top: auto;
+}
+
+.presentation-subtitle,
+.news-subtitle,
+.courses-subtitle,
+.events-subtitle {
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.presentation-text,
+.news-text {
+    font-family: var(--worksans);
+    margin: 32px auto 128px;
+}
+
+.presentation-gradient {
+    background: linear-gradient(40deg, var(--fforange) 50%, white 50%);
+    margin: 0vh auto 10vh;
+    padding: 64px;
+    width: 100%;
+}
+
+.news-img {
+    display: block;
+    margin: 10vh auto 0vh;
+    width: 100%;
+}
+
+/* ############################# Début css BOUTON actualités ############################## */
+
+.news-button {
+    display: block;
+    margin: 0 auto;
+    padding: 12px 24px;
+    border: 4px solid var(--fforange);
+    transition: all 0.2s ease-in;
+    background: transparent;
+    position: relative;
+    overflow: hidden;
+    font-size: 19px;
+    cursor: pointer;
+    color: var(--fforange);
+    z-index: 1;
+}
+
+.news-button:before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) scaleY(1) scaleX(1.25);
+    top: 100%;
+    width: 140%;
+    height: 180%;
+    background-color: var(--fforange);
+    border-radius: 50%;
+    display: block;
+    transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+    z-index: -1;
+}
+
+.news-button:after {
+    content: "";
+    position: absolute;
+    left: 55%;
+    transform: translateX(-50%) scaleY(1) scaleX(1.45);
+    top: 180%;
+    width: 160%;
+    height: 190%;
+    background-color: black;
+    border-radius: 50%;
+    display: block;
+    transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+    z-index: -1;
+}
+
+.news-button:hover {
+    color: #ffffff;
+    border-color: #ff8e51;
+}
+
+.news-button:hover:before {
+    top: -35%;
+    background-color: var(--fforange);
+    transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+
+.news-button:hover:after {
+    top: -45%;
+    background-color: var(--fforange);
+    transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+
+/* ################################ Fin css BOUTON actualités ##################################### */
+
+
+/* ################################ Debut css FOOTER ##################################*/
+.footer {
+    background-color: black;
+    align-items: center;
+    position: relative;
+    color: white;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 20px;
+    max-width: 100vw;
+    margin: 0 auto;
+    padding: 128px 32px 8px;
+}
+
+.footer-section {
+    padding: 20px;
+}
+
+.footer-center,
+.footer-right {
+    border-left: 1px solid white;
+}
+
+.footer-left .news-button {
+    margin: 0;
+    margin-left: 64px;
+    margin-top: 100px;
+}
+
+.footer-logo-link {
+    color: var(--fforange);
+}
+
+.footer-center a {
+    font-family: "Work Sans", sans-serif;
+}
+
+.location {
+    margin-top: 20px;
+}
+
+.footer-bottom {
+    grid-column: span 3;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 0px;
+}
+
+.logo-footer-bottom {
+    width: 111px;
+}
+
+.address {
+    margin: 0 auto;
+    width: fit-content;
+}
+
+.copyright {
+    font-size: 12px;
+    font-weight: 200;
+}
+
+.legal-statement {
+    font-size: 10px;
+    font-weight: 200;
+}
+
+.contact-button {
+    color: white;
+    border: 4px solid #ffffff;
+}
+
+/* ############################### Fin css FOOTER ##################################### */
+
+
+.courses-gradient {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(25deg, white 40%, var(--fforange) 0%);
+    margin: 10vh auto;
+    width: 100%;
+}
+
+.courses-button {
+    align-self: center;
+    margin-bottom: 25px;
+}
+
+.contact-button:hover {
+    background-color: #000000;
+    border-color: rgb(255, 255, 255);
+}
+
+button {
+    font-family: "Work Sans", sans-serif;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    margin-bottom: 15px;
+}
+
+.section-frame {
+    margin-bottom: 64px;
+}
+
+.social-networking img {
+    width: 32px;
+}
+
+/* ############################################## MEDIA QUERIES ################################################### */
+
+
+@media (max-width: 1150px) {
+    .nav {
+        height: 0px;
+        justify-content: center;
+        gap: 32px;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 80px;
+        right: 0;
+        width: 33vw;
+        background-color: #f6f6f6;
+        transition: 0.5s;
+        overflow: hidden;
+    }
+
+    .nav.active {
+        height: fit-content;
+        padding: 16px;
+        border: 2px solid black;
+    }
+
+    .a-nav {
+        display: block;
+        color: #000000;
+        width: fit-content;
+        text-align: center;
+        transition: 0.5s;
+        opacity: 0;
+    }
+
+    .active .a-nav {
+        opacity: 1;
+        border-bottom: 2px solid #FF7828;
+        padding: 4px;
+    }
+
+    .active .a-nav:hover {
+        color: #FF7828;
+    }
+
+    .hero-section h1 {
+        color: white;
+        font-weight: 700;
+        font-size: 56px;
+        padding: 81px;
+        margin-top: auto;
+    }
+
+    .burger {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        user-select: none;
+        cursor: pointer;
+        transition: 300ms;
+        border-radius: 10px;
+    }
+
+    .burger-icon>* {
+        pointer-events: none;
+    }
+
+    .burger input[type="checkbox"] {
+        appearance: none;
+        transition: 300ms;
+    }
+
+    .burger::before,
+    .burger::after {
+        content: "";
+        transition: 300ms;
+        transform-origin: center center;
+    }
+
+    .burger::before {
+        transform: translateY(8px);
+    }
+
+    .burger::after {
+        transform: translateY(-8px);
+    }
+
+    .burger .line,
+    .burger::before,
+    .burger::after {
+        width: 25px;
+        height: 2.1px;
+        display: block;
+        background-color: rgb(255, 255, 255);
+        border-radius: 5px;
+        position: absolute;
+    }
+
+    .burger .line:checked {
+        width: 0;
+        transition-delay: 100ms;
+    }
+
+    .burger:has(.line:checked)::before {
+        animation: animation1 400ms ease-out 0s 1 both;
+    }
+
+    .burger:has(.line:checked)::after {
+        animation: animation2 400ms ease-out 0s 1 both;
+    }
+
+    .burger:active {
+        scale: 0.95;
+    }
+
+    @keyframes animation1 {
+        0% {
+            transform: translateY(8px) rotate(0deg);
+        }
+
+        50% {
+            transform: translateY(0px) rotate(0deg);
+        }
+
+        100% {
+            transform: translateY(0px) rotate(45deg);
+        }
+    }
+
+    @keyframes animation2 {
+        0% {
+            transform: translateY(-8px) rotate(0deg);
+        }
+
+        50% {
+            transform: translateY(0px) rotate(0deg);
+        }
+
+        100% {
+            transform: translateY(0px) rotate(-45deg);
+        }
+    }
+}
+
+@media (max-width: 850px) {
+    .nav {
+        width: 50vw;
+    }
+}
+
+@media (max-width: 700px) {
+    .logo {
+        font-weight: 900;
+        font-size: 26px;
+    }
+
+    .header {
+        padding: 18px;
+    }
+
+    .hero-section h1 {
+        color: white;
+        font-weight: 700;
+        font-size: 48px;
+        padding: 81px 36px;
+        margin-top: auto;
+    }
+
+    .presentation-subtitle {
+        font-size: 24px;
+    }
+
+}
+
+@media (max-width: 1000px) {
+    .presentation-gradient {
+        padding: 32px;
+    }
+
+    .footer {
+        grid-template-columns: 1fr;
+        padding-inline: 8px;
+    }
+
+    .footer-section {
+        padding-inline: 8px;
+    }
+
+    .footer-bottom {
+        grid-column: span 1;
+    }
+
+    .footer-center,
+    .footer-right,
+    .footer-left {
+        border-left: none;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-left .news-button {
+        margin: 32px 0;
+    }
+
+    .pages-links {
+        order: 0;
+        text-align: center;
+    }
+
+    .social-media {
+        order: 1;
+    }
+
+    .location {
+        text-align: center;
+    }
+
+    .footer iframe {
+        max-width: 100%;
+    }
+
+}
+
+@media (max-width: 500px) {
+    .presentation-gradient {
+        padding: 16px;
+    }
+    .nav {
+        width: 70vw;
+    }
+}
+
+/* ########################################### FIN MEDIA QUERIES ########################################## */
+
+
+/* ############################################ Code Slider ############################################### */
+
+.slider-container {
+    margin: 0 auto;
+    max-width: 1330px;
+    max-height: 800px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.first-slider {
+    display: flex;
+    animation: first-slider 20s infinite ease-in-out;
+}
+
+.slider-image {
+    flex-shrink: 0;
+    width: 100%;
+    object-fit: cover;
+}
+
+@keyframes first-slider {
+
+    0%,
+    20% {
+        transform: translateX(0);
+    }
+
+    25%,
+    45% {
+        transform: translateX(-100%);
+    }
+
+    50%,
+    70% {
+        transform: translateX(-200%);
+    }
+
+    75%,
+    95% {
+        transform: translateX(-300%);
+    }
+
+    100% {
+        transform: translateX(-400%);
+    }
+}
+
+/* ########################################### FIN Code Slider ############################################## */
+
+/* ########################################### Code Carousel ############################################## */
+
+.courses-section {
+    padding: 64px 0px 32px 0px;
+}
+
+.courses-subtitle,
+.course-slide {
+    margin-bottom: 32px;
+}
+
+.carousel-arrow {
+    position: absolute;
+    border: none;
+    display: flex;
+    justify-content: center;
+    background-color: transparent;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 100ms, transform 0.3s ease;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+.carousel-arrow-prev {
+    left: 0;
+}
+
+.carousel-arrow-next {
+    right: 0;
+}
+
+.carousel-arrow:hover {
+    opacity: 1;
+    transform: translateY(-50%) scale(1.05);
+}
+
+.courses-carousel-container {
+    position: relative;
+    max-width: 1330px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.courses-container {
+    width: calc(100% - 160px);
+    margin: 0 auto;
+    display: flex;
+    gap: 64px;
+    overflow-x: hidden;
+    align-items: center;
+    justify-content: space-between;
+    scroll-behavior: smooth;
+}
+
+.course-slide {
+    flex: 1 0 350px;
+    background-color: #f6f6f6;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.course-slide:hover {
+    font-weight: 500;
+}
+
+.course-name {
+    text-align: center;
+    padding: 24px;
+}
+
+.course-slide p {
+    color: #000000;
+    transition: font-weight 0.5s ease-in-out;
+}
+
+.courses-images-container {
+    display: flex;
+    flex-shrink: 0;
+    max-height: 500px;
+    height: 100%;
+    max-width: 350px;
+    width: 100%;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+.courses-images-container img {
+    width: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.courses-images-container img:hover {
+    transform: scale(1.01);
+    ;
+}
+
+@media (max-width: 950px) {
+    .course-slide {
+        max-width: 335px;
+        width: 100%;
+    }
+
+    .courses-images-container img {
+        max-height: 450px;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .courses-container {
+        gap: 32px;
+        width: calc(100% - 128px);
+    }
+}
+
+@media (max-width: 850px) {
+    .course-slide {
+        max-width: 260px;
+        width: 100%;
+    }
+
+    .courses-images-container img {
+        max-height: 380px;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .courses-container {
+        gap: 32px;
+        width: calc(100% - 128px);
+    }
+}
+
+@media (max-width: 700px) {
+    .course-slide {
+        max-width: 350px;
+        width: 100%;
+    }
+
+    .courses-images-container img {
+        max-height: 500px;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .courses-container {
+        gap: 0;
+        width: 350px;
+    }
+}
+
+@media (max-width: 520px) {
+    .course-slide {
+        max-width: 260px;
+        width: 100%;
+    }
+
+    .courses-images-container img {
+        max-height: 380px;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .courses-container {
+        gap: 0;
+        width: 260px;
+    }
+}
+
+/* ########################################### FIN Code Carousel ############################################## */
