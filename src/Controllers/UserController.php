@@ -22,12 +22,13 @@ class UserController extends MainController
     public function create()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $password_hash = password_hash($_POST["password"], PASSWORD_BCRYPT);
             $infos = [
                 'firstname' => $_POST["firstname"],
                 'lastname'  => $_POST["lastname"],
                 'email'     => $_POST["email"],
                 'role'      => $_POST["role"],
-                'password'  => $_POST["password"]
+                'password'  => $password_hash
             ];
             $this->object->insert($infos);
             header("location: /user");
@@ -72,15 +73,39 @@ class UserController extends MainController
 
     public function login()
     {
-        // if ($_SERVER["REQUEST_METHOD"] === "POST") {
-        //     $errors = [];
-        // }
-        header("location: /login");
-        // $login = $this->object->find();
+        $errors = "";
+
+        if (isset($_SESSION["auth"])) {
+            header("location: /user");
+        }
+        if ($_SERVER["REQUEST_METHOD"] === "POST") {
+            //Je dois vérifier si les champs sont vides ou pas?
+            if (!empty($_POST["email"]) && !empty($_POST["password"])) {
+                //Je vérifie si l'email est présent dans la table users (DB)
+                $userModel = new Users;
+                $user = $userModel->findByEmail($_POST["email"]);
+                if ($user) {
+                    //Je vérifie le mdp
+                    if (password_verify($_POST["password"], $user->password)) {
+                        //Si c'est ok je redirige vers la page users
+                        $_SESSION["auth"] = $user;
+                        header("location: /user");
+                    } else {
+                        $errors = "E-mail ou mot de passe incorrect";
+                    }
+                } else {
+                    $errors = "E-mail ou mot de passe incorrect";
+                }
+            } else {
+                $errors = "Tous les champs sont requis";
+            }
+        }
+        require "Admin/Views/login.php";
     }
 
     public function logout()
     {
-
+        unset($_SESSION["auth"]);
+        header("location: /user/login");
     }
 }

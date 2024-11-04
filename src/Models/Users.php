@@ -15,6 +15,7 @@ class Users extends Model
         parent::__construct();
         $this->table = "users";
     }
+    
     public function findAll()
     {
         $req = "SELECT $this->table.*, role_name FROM $this->table
@@ -22,5 +23,15 @@ class Users extends Model
         $result = $this->PDO->prepare($req);
         $result->execute();
         return $result->fetchAll();
+    }
+    
+    public function findByEmail($email)
+    {
+        $req = "SELECT * FROM $this->table
+        WHERE email = :email";
+        $result = $this->PDO->prepare($req);
+        $result->bindValue(":email", $email);
+        $result->execute();
+        return $result->fetch(\PDO::FETCH_OBJ);
     }
 }

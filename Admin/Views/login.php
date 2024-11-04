@@ -12,12 +12,15 @@ include($_SERVER["DOCUMENT_ROOT"] . "/Admin/Views/_blocks/doctype.php");
         <div class="content">
             <form action="" method="POST" class="login-form">
                 <label for="email">E-mail :</label>
-                <input type="email" id="email" name="email" placeholder="Votre e-mail" required>
+                <input type="email" id="email" name="email" placeholder="Votre e-mail">
 
                 <label for="password">Mot de passe :</label>
-                <input type="password" id="password" name="password" placeholder="Votre mot de passe" required>
+                <input type="password" id="password" name="password" placeholder="Votre mot de passe">
 
                 <button type="submit">Se connecter</button>
+                <?php
+                echo $errors;
+                ?>
                 <a href="">Mot de passe oublié?</a>
             </form>
         </div>
