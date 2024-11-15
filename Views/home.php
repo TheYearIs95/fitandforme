@@ -1,6 +1,5 @@
 <?php
 // require_once "vendor/autoload.php";
-
 ?>
 
 
@@ -62,11 +61,11 @@
             <div class="presentation-gradient">
                 <div class="slider-container">
                     <div class="first-slider">
-                        <img src="/public/img/img-slider/slider-img-1.jpg" class="slider-first-image slider-image" alt="">
-                        <img src="/public/img/img-slider/slider-img-2.jpg" class="slider-second-image slider-image" alt="">
-                        <img src="/public/img/img-slider/slider-img-3.jpg" class="slider-third-image slider-image" alt="">
-                        <img src="/public/img/img-slider/slider-img-4.jpg" class="slider-fourth-image slider-image" alt="">
-                        <img src="/public/img/img-slider/slider-img-1.jpg" class="slider-first-image slider-image" alt="">
+                        <img src="/public/img/img-slider/slider-img-1.jpg" class="slider-first-image slider-image" alt="premiere image du slider">
+                        <img src="/public/img/img-slider/slider-img-2.jpg" class="slider-second-image slider-image" alt="deuxieme image du slider">
+                        <img src="/public/img/img-slider/slider-img-3.jpg" class="slider-third-image slider-image" alt="troisieme image du slider">
+                        <img src="/public/img/img-slider/slider-img-4.jpg" class="slider-fourth-image slider-image" alt="quatrieme image du slider">
+                        <img src="/public/img/img-slider/slider-img-1.jpg" class="slider-first-image slider-image" alt="premiere image du slider">
                     </div>
                 </div>
         </section>

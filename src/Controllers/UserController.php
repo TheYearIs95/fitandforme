@@ -81,7 +81,7 @@ class UserController extends MainController
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
             //Je dois vérifier si les champs sont vides ou pas?
             if (!empty($_POST["email"]) && !empty($_POST["password"])) {
-                //Je vérifie si l'email est présent dans la table users (DB)
+                //Je vérifie si l'email est présent dans la table users
                 $userModel = new Users;
                 $user = $userModel->findByEmail($_POST["email"]);
                 if ($user) {

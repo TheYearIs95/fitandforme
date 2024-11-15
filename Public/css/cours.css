@@ -68,7 +68,7 @@
 }
 
 @media (max-width: 1200px) {
-    .courses-container {
+    .courses-grid-container {
         grid-template-columns: repeat(2, auto);
     }
 
@@ -78,7 +78,7 @@
 }
 
 @media (max-width: 780px) {
-    .courses-container {
+    .courses-grid-container {
         grid-template-columns: auto;
     }
 

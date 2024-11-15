@@ -21,7 +21,7 @@ class Host extends PDO
             $this->setAttribute(PDO::MYSQL_ATTR_INIT_COMMAND, 'SET NAMES utf-8');
             $this->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
             $this->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        } catch (PDOException $exception) { //$exception pour pouvoir appeler les methodes propres à la classe PDOException
+        } catch (PDOException $exception) {
             die($exception->getMessage());
         }
     }
@@ -34,3 +34,9 @@ class Host extends PDO
         return self::$instance;
     }
 }
+
+
+
+
+
+

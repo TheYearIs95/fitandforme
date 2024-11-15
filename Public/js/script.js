@@ -1,4 +1,4 @@
-// ##################################### Code Carousel ##################################
+// ##################################### Code Carousel ####################################
 
 const carousel = document.querySelector(".courses-container");
 const nextButton = document.querySelector(".carousel-arrow-next");
