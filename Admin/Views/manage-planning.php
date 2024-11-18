@@ -31,7 +31,7 @@ include($_SERVER["DOCUMENT_ROOT"] . "/Admin/Views/_blocks/doctype.php");
                     <td><?php echo substr($time->starting_time, 0, 5) . " - " . substr($time->ending_time, 0, 5); ?></td>
                     <td class="select">
                         <a href="/time/update/<?php echo $time->id; ?>" class="button">Modifier</a>
-                        <a href="/time/delete/<?php echo $time->id; ?>" class="button">Supprimer</a>
+                        <a href="/time/delete/<?php echo $time->id; ?>" class="delete-button">Supprimer</a>
                     </td>
                 </tr>
                 <?php } ?>

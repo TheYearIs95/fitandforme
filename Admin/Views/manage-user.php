@@ -33,7 +33,7 @@ include($_SERVER["DOCUMENT_ROOT"] . "/Admin/Views/_blocks/doctype.php");
                         <td><?php echo $user->role_name ?></td>
                         <td class="select">
                             <a href="/user/update/<?php echo $user->id; ?>" class="button">Modifier</a>
-                            <a href="/user/delete/<?php echo $user->id; ?>" class="button">Supprimer</a>
+                            <a href="/user/delete/<?php echo $user->id; ?>" class="delete-button">Supprimer</a>
                         </td>
                     </tr>
                 <?php } ?>

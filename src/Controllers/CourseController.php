@@ -17,12 +17,14 @@ class CourseController extends MainController
 
     public function index()
     {
+        $this->isAutheticated();
         $courses = $this->object->findAll();
         require "Admin/Views/manage-course.php";
     }
 
     public function create()
     {
+        $this->isAutheticated();
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $infos = [
                 'title' => $_POST["course-name"],
@@ -50,17 +52,17 @@ class CourseController extends MainController
 
     public function update($id)
     {
-        // $user = $this->object->find($id);
+        $this->isAutheticated();
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            
+
             $description = $_POST["course-description"];
-            
+
             $infos = [
                 'title' => $_POST["course-name"],
                 'text' => $description,
                 'user_id' => "1"
             ];
-            
+
             if (!empty($_POST["course-image"])) {
                 $infos['image'] = $_POST["course-image"];
             }
@@ -76,6 +78,7 @@ class CourseController extends MainController
 
     public function delete($id)
     {
+        $this->isAutheticated();
         $course = $this->object->find($id);
         $delete = "Voulez vous supprimer le cours " . $course->title . " ?";
         if (isset($_POST["confirm"])) {

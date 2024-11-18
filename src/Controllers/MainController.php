@@ -13,8 +13,15 @@ class MainController extends Host
     {
         $this->pdo = Host::getInstance();
     }
-    public function index() 
+    public function index()
     {
         require "Views/home.php";
+    }
+
+    public function isAutheticated()
+    {
+        if (!isset($_SESSION['auth'])) {
+            header('location: /user/login');
+        }
     }
 }

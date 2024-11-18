@@ -15,12 +15,14 @@ class PricingController extends MainController
 
     public function index()
     {
+        $this->isAutheticated();
         $prices = $this->object->findAll();
         require "Admin/Views/manage-price.php";
     }
 
     public function create()
     {
+        $this->isAutheticated();
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $infos = [
                 'type'      => $_POST["formula"],
@@ -38,6 +40,7 @@ class PricingController extends MainController
 
     public function update($id)
     {
+        $this->isAutheticated();
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $description = $_POST["event-description"];
             $infos = [
@@ -58,6 +61,7 @@ class PricingController extends MainController
 
     public function delete($id)
     {
+        $this->isAutheticated();
         $price = $this->object->find($id);
         $delete = "Voulez vous supprimer la session " . $price->session . " ?";
         if (isset($_POST["confirm"])) {

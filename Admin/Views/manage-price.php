@@ -34,7 +34,7 @@ include($_SERVER["DOCUMENT_ROOT"] . "/Admin/Views/_blocks/doctype.php");
                         <td><?php echo $price->price ?></td>
                         <td class="select">
                             <a href="/pricing/update/<?php echo $price->id ?>" class="button">Modifier</a>
-                            <a href="/pricing/delete/<?php echo $price->id ?>" class="button">Supprimer</a>
+                            <a href="/pricing/delete/<?php echo $price->id ?>" class="delete-button">Supprimer</a>
                         </td>
                     </tr>
                 <?php } ?>

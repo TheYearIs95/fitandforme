@@ -15,12 +15,14 @@ class EventController extends MainController
 
     public function index()
     {
+        $this->isAutheticated();
         $events = $this->object->findAll();
         require "Admin/Views/manage-event.php";
     }
 
     public function create()
     {
+        $this->isAutheticated();
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $infos = [
                 'title'     => $_POST["event-title"],
@@ -38,6 +40,7 @@ class EventController extends MainController
 
     public function update($id)
     {
+        $this->isAutheticated();
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $description = $_POST["event-description"];
             $infos = [
@@ -60,6 +63,7 @@ class EventController extends MainController
 
     public function delete($id)
     {
+        $this->isAutheticated();
         $event = $this->object->find($id);
         $delete = "Voulez vous supprimer l'évènement " . $event->title . " ?";
         if (isset($_POST["confirm"])) {

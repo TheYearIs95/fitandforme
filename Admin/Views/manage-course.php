@@ -1,7 +1,7 @@
 <?php
 include($_SERVER["DOCUMENT_ROOT"] . "/Admin/Views/_blocks/doctype.php");
 ?>
-<link rel="stylesheet" href="/Admin/Public/css/manage-course.css">
+<link rel="stylesheet" href="/Admin/Public/css/styles.css">
 <link rel="stylesheet" href="/Admin/Public/css/manage-user.css">
 <title>Gestion cours</title>
 </head>
@@ -23,14 +23,14 @@ include($_SERVER["DOCUMENT_ROOT"] . "/Admin/Views/_blocks/doctype.php");
             </thead>
             <tbody>
                 <?php foreach ($courses as $index => $course) { ?>
-                <tr>
-                    <td><?php echo $course->id; ?></td>
-                    <td><?php echo $course->title; ?></td>
-                    <td class="select">
-                        <a href="/course/update/<?php echo $course->id; ?>" class="button">Modifier</a>
-                        <a href="/course/delete/<?php echo $course->id; ?>" class="button">Supprimer</a>
-                    </td>
-                </tr>
+                    <tr>
+                        <td><?php echo $course->id; ?></td>
+                        <td><?php echo $course->title; ?></td>
+                        <td class="select">
+                            <a href="/course/update/<?php echo $course->id; ?>" class="button">Modifier</a>
+                            <a href="/course/delete/<?php echo $course->id; ?>" class="delete-button">Supprimer</a>
+                        </td>
+                    </tr>
                 <?php } ?>
             </tbody>
         </table>

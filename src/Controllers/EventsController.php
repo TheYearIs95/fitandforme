@@ -15,7 +15,6 @@ class EventsController
 
     public function index()
     {
-        // $courses = $this->object->findAll();
         require "./Views/evenements.php";
     }
 }

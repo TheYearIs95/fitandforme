@@ -15,12 +15,14 @@ class UserController extends MainController
 
     public function index()
     {
+        $this->isAutheticated();
         $users = $this->object->findAll();
         require "Admin/Views/manage-user.php";
     }
 
     public function create()
     {
+        $this->isAutheticated();
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $password_hash = password_hash($_POST["password"], PASSWORD_BCRYPT);
             $infos = [
@@ -40,13 +42,15 @@ class UserController extends MainController
 
     public function update($id)
     {
+        $this->isAutheticated();
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $password_hash = password_hash($_POST["password"], PASSWORD_BCRYPT);
             $infos = [
                 'firstname' => $_POST["firstname"],
                 'lastname'  => $_POST["lastname"],
                 'email'     => $_POST["email"],
                 'role'      => $_POST["role"],
-                'password'  => $_POST["password"]
+                'password'  => $password_hash
             ];
             $this->object->update($infos, $id);
             header("location: /user");
@@ -59,6 +63,7 @@ class UserController extends MainController
 
     public function delete($id)
     {
+        $this->isAutheticated();
         $user = $this->object->find($id);
         $delete = "Voulez vous supprimer l'utilisateur " . $user->firstname . " " . $user->lastname . " ?";
         if (isset($_POST["confirm"])) {

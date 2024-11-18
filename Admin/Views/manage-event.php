@@ -27,7 +27,7 @@ include($_SERVER["DOCUMENT_ROOT"] . "/Admin/Views/_blocks/doctype.php");
                         <td><?php echo $event->title; ?></td>
                         <td class="select">
                         <a href="/event/update/<?php echo $event->id; ?>" class="button">Modifier</a>
-                        <a href="/event/delete/<?php echo $event->id; ?>" class="button">Supprimer</a>
+                        <a href="/event/delete/<?php echo $event->id; ?>" class="delete-button">Supprimer</a>
                     </td>
                     </tr>
                 <?php } ?>

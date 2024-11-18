@@ -17,12 +17,14 @@ class TimeController extends MainController
 
     public function index()
     {
+        $this->isAutheticated();
         $times = $this->object->findAll();
         require "Admin/Views/manage-planning.php";
     }
 
     public function create()
     {
+        $this->isAutheticated();
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $course = new Courses;
             $id = $course->id;
@@ -44,6 +46,7 @@ class TimeController extends MainController
 
     public function update($id)
     {
+        $this->isAutheticated();
         $course = new Courses;
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $id = $course->id;
@@ -66,6 +69,7 @@ class TimeController extends MainController
 
     public function delete($id)
     {
+        $this->isAutheticated();
         $time = $this->object->find($id);
         $delete = "Voulez vous supprimer la séance du " . $time->day . " ?";
         if (isset($_POST["confirm"])) {

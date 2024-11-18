@@ -56,71 +56,87 @@ require_once "vendor/autoload.php";
 
             <article class="gym-posturale-div container-div">
                 <div class="images-container">
-                    <img src="/public/img/cours-gym-posturale.jpg" class="gym-posturale-image courses-images"
-                        alt="Une photo d'une femme qui s'étire">
+                    <a href="">
+                        <img src="/public/img/cours-gym-posturale.jpg" class="gym-posturale-image courses-images"
+                            alt="Une photo d'une femme qui s'étire">
+                    </a>
                 </div>
                 <h3 class="courses-names">Gym posturale</h3>
             </article>
 
             <article class="renforcement-div container-div">
                 <div class="images-container">
-                    <img src="/public/img/cours-renforcement.jpg" class="renforcement-image courses-images"
-                        alt="Une photo d'une femme avec une haltère">
+                    <a href="">
+                        <img src="/public/img/cours-renforcement.jpg" class="renforcement-image courses-images"
+                            alt="Une photo d'une femme avec une haltère">
+                    </a>
                 </div>
                 <h3 class="courses-names">Renforcement musculaire</h3>
             </article>
 
             <article class="step-div container-div">
                 <div class="images-container">
-                    <img src="/public/img/cours-step.jpg" class="step-image courses-images"
-                        alt="Une photo d'une femme qui fait du step">
+                    <a href="">
+                        <img src="/public/img/cours-step.jpg" class="step-image courses-images"
+                            alt="Une photo d'une femme qui fait du step">
+                    </a>
                 </div>
                 <h3 class="courses-names">Step</h3>
             </article>
 
             <article class="pound-div container-div">
                 <div class="images-container">
-                    <img src="/public/img/cours-pound.jpg" class="pound-image courses-images"
-                        alt="Une photo d'une femme avec deux sticks vert">
+                    <a href="">
+                        <img src="/public/img/cours-pound.jpg" class="pound-image courses-images"
+                            alt="Une photo d'une femme avec deux sticks vert">
+                    </a>
                 </div>
                 <h3 class="courses-names">Pound</h3>
             </article>
 
             <article class="zumba-div container-div">
                 <div class="images-container">
-                    <img src="/public/img/cours-zumba.jpg" class="zumba-image courses-images"
-                        alt="Une photo d'une femme qui danse la Zumba">
+                    <a href="">
+                        <img src="/public/img/cours-zumba.jpg" class="zumba-image courses-images"
+                            alt="Une photo d'une femme qui danse la Zumba">
+                    </a>
                 </div>
                 <h3 class="courses-names">Zumba</h3>
             </article>
 
             <article class="stretching-div container-div">
                 <div class="images-container">
-                    <img src="/public/img/cours-stretching.jpg" class="stretching-image courses-images"
-                        alt="Une photo d'une femme qui stretch">
+                    <a href="">
+                        <img src="/public/img/cours-stretching.jpg" class="stretching-image courses-images"
+                            alt="Une photo d'une femme qui stretch">
+                    </a>
                 </div>
                 <h3 class="courses-names">Renfo-stretching</h3>
             </article>
 
             <article class="danses-urbaines-div container-div">
                 <div class="images-container">
-                    <img src="/public/img/cours-danses-urbaines.jpg" class="danses-urbaines-image courses-images"
-                        alt="Une photo d'une fille qui danse">
+                    <a href="">
+                        <img src="/public/img/cours-danses-urbaines.jpg" class="danses-urbaines-image courses-images"
+                            alt="Une photo d'une fille qui danse">
+                    </a>
                 </div>
                 <h3 class="courses-names">Danses urbaines</h3>
             </article>
 
             <article class="dance-fit-div container-div">
                 <div class="images-container">
-                    <img src="/public/img/cours-dance-fit.jpg" class="dance-fit-image courses-images"
-                        alt="Une photo d'une femme qui danse">
+                    <a href="">
+                        <img src="/public/img/cours-dance-fit.jpg" class="dance-fit-image courses-images"
+                            alt="Une photo d'une femme qui danse">
+                    </a>
                 </div>
                 <h3 class="courses-names">Dance fit</h3>
             </article>
 
             <article class="boxe-div container-div">
                 <div class="images-container">
-                    <img src="/public/img/cours-boxe.jpg" class="boxe-image courses-images" alt="Une photo d'une bande de boxe">
+                    <a href=""><img src="/public/img/cours-boxe.jpg" class="boxe-image courses-images" alt="Une photo d'une bande de boxe"></a>
                 </div>
                 <h3 class="courses-names">Cardio boxe</h3>
             </article>
