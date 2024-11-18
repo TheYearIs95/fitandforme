@@ -21,7 +21,7 @@ include($_SERVER["DOCUMENT_ROOT"] . "/Admin/Views/_blocks/doctype.php");
                 <?php
                 echo $errors;
                 ?>
-                <a href="">Mot de passe oublié?</a>
+                <!-- <a href="">Mot de passe oublié?</a> -->
             </form>
         </div>
     </main>

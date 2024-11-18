@@ -64,7 +64,7 @@ class EventController extends MainController
         $delete = "Voulez vous supprimer l'évènement " . $event->title . " ?";
         if (isset($_POST["confirm"])) {
             $this->object->delete($id);
-            header("location: /event"); //pour rediriger l'utilisateur
+            header("location: /event");
         } elseif (isset($_POST["cancel"])) {
             header("location: /event"); //pour rediriger l'utilisateur s'il clique sur non
         }

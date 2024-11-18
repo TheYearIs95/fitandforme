@@ -60,7 +60,7 @@ class UserController extends MainController
     public function delete($id)
     {
         $user = $this->object->find($id);
-        $delete = "Voulez vous supprimer l'utilisateur' " . $user->firstname . " " . $user->lastname . " ?";
+        $delete = "Voulez vous supprimer l'utilisateur " . $user->firstname . " " . $user->lastname . " ?";
         if (isset($_POST["confirm"])) {
             $this->object->delete($id);
             header("location: /user"); //pour rediriger l'utilisateur
