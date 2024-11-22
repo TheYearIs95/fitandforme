@@ -24,4 +24,21 @@ class MainController extends Host
             header('location: /user/login');
         }
     }
+
+    public function extensionVerify($name)
+    {
+        $extensions = [".jpg",".jpeg","webp", ".png"];
+        $imageExtension = strrchr($name, ".");
+        if (in_array($imageExtension, $extensions)) {
+            return true;
+        }
+        return false;
+    }
+
+    public function uploadImage($imageInput)
+    {
+        if ($this->extensionVerify($_FILES[$imageInput]['name'])) {
+            move_uploaded_file($_FILES[$imageInput]['tmp_name'], 'Public/img/'.$_FILES[$imageInput]['name']);
+        }
+    }
 }

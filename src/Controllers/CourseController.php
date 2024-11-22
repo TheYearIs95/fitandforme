@@ -26,20 +26,21 @@ class CourseController extends MainController
     {
         $this->isAutheticated();
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $this->uploadImage("event-image");
             $infos = [
-                'title' => $_POST["course-name"],
-                'text' => $_POST["course-description"],
-                'image' => $_POST["course-image"],
-                'user_id' => "1"
+                'title'     => filter_input(INPUT_POST, "course-name", FILTER_SANITIZE_FULL_SPECIAL_CHARS),
+                'text'      => filter_input(INPUT_POST, "course-description", FILTER_SANITIZE_FULL_SPECIAL_CHARS),
+                'image'     => $_FILES["course-image"]['name'],
+                'user_id'   => $_SESSION["auth"]->id
             ];
             $id = $this->object->insert($infos);
 
             $infos = [
-                'day' => $_POST["day"],
-                'starting_time' => $_POST["starting-time"],
-                'ending_time' => $_POST["ending-time"],
-                'course_id' => $id,
-                'user_id' => "1"
+                'day'           => filter_input(INPUT_POST, "day", FILTER_SANITIZE_NUMBER_INT),
+                'starting_time' => filter_input(INPUT_POST, "starting-time", FILTER_SANITIZE_FULL_SPECIAL_CHARS),
+                'ending_time'   => filter_input(INPUT_POST, "ending-time", FILTER_SANITIZE_FULL_SPECIAL_CHARS),
+                'course_id'     => $id,
+                'user_id'       => $_SESSION["auth"]->id
             ];
             $time = new Time();
             $time->insert($infos);
@@ -55,16 +56,16 @@ class CourseController extends MainController
         $this->isAutheticated();
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-            $description = $_POST["course-description"];
+            $description = filter_input(INPUT_POST, "course-description", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
             $infos = [
-                'title' => $_POST["course-name"],
-                'text' => $description,
-                'user_id' => "1"
+                'title'     => filter_input(INPUT_POST, "course-name", FILTER_SANITIZE_FULL_SPECIAL_CHARS),
+                'text'      => $description,
+                'user_id'   => $_SESSION["auth"]->id
             ];
 
             if (!empty($_POST["course-image"])) {
-                $infos['image'] = $_POST["course-image"];
+                $infos['image'] = $_FILES["course-image"]['name'];
             }
             $this->object->update($infos, $id);
             header("location: /course");

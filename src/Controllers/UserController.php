@@ -26,10 +26,10 @@ class UserController extends MainController
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $password_hash = password_hash($_POST["password"], PASSWORD_BCRYPT);
             $infos = [
-                'firstname' => $_POST["firstname"],
-                'lastname'  => $_POST["lastname"],
-                'email'     => $_POST["email"],
-                'role'      => $_POST["role"],
+                'firstname' => filter_input(INPUT_POST, "firstname", FILTER_SANITIZE_FULL_SPECIAL_CHARS),
+                'lastname'  => filter_input(INPUT_POST, "lastname", FILTER_SANITIZE_FULL_SPECIAL_CHARS),
+                'email'     => filter_input(INPUT_POST, "email", FILTER_SANITIZE_EMAIL),
+                'role'      => filter_input(INPUT_POST, "role", FILTER_SANITIZE_NUMBER_INT),
                 'password'  => $password_hash
             ];
             $this->object->insert($infos);
@@ -46,10 +46,10 @@ class UserController extends MainController
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $password_hash = password_hash($_POST["password"], PASSWORD_BCRYPT);
             $infos = [
-                'firstname' => $_POST["firstname"],
-                'lastname'  => $_POST["lastname"],
-                'email'     => $_POST["email"],
-                'role'      => $_POST["role"],
+                'firstname' => filter_input(INPUT_POST, "firstname", FILTER_SANITIZE_FULL_SPECIAL_CHARS),
+                'lastname'  => filter_input(INPUT_POST, "lastname", FILTER_SANITIZE_FULL_SPECIAL_CHARS),
+                'email'     => filter_input(INPUT_POST, "email", FILTER_SANITIZE_EMAIL),
+                'role'      => filter_input(INPUT_POST, "role", FILTER_SANITIZE_NUMBER_INT),
                 'password'  => $password_hash
             ];
             $this->object->update($infos, $id);
@@ -88,7 +88,7 @@ class UserController extends MainController
             if (!empty($_POST["email"]) && !empty($_POST["password"])) {
                 //Je vérifie si l'email est présent dans la table users
                 $userModel = new Users;
-                $user = $userModel->findByEmail($_POST["email"]);
+                $user = $userModel->findByEmail(filter_input(INPUT_POST, "email", FILTER_SANITIZE_EMAIL));
                 if ($user) {
                     //Je vérifie le mdp
                     if (password_verify($_POST["password"], $user->password)) {

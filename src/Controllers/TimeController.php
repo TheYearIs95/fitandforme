@@ -25,21 +25,22 @@ class TimeController extends MainController
     public function create()
     {
         $this->isAutheticated();
+        $course = new Courses;
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $course = new Courses;
             $id = $course->id;
             $infos = [
-                'day' => $_POST["day"],
-                'starting-time' => $_POST["starting-time"],
-                'ending-time'   => $_POST["ending-time"],
+                'day' => filter_input(INPUT_POST, "day", FILTER_SANITIZE_NUMBER_INT),
+                'starting-time' => filter_input(INPUT_POST, "starting-time", FILTER_SANITIZE_FULL_SPECIAL_CHARS),
+                'ending-time'   => filter_input(INPUT_POST, "ending-time", FILTER_SANITIZE_FULL_SPECIAL_CHARS),
                 'course_id'     => $id,
-                'user_id'       => "1"
+                'user_id'       => $_SESSION["auth"]->id
             ];
             $this->object->insert($infos);
             header("location: /Time");
         } else {
             $page_title = "Ajouter séance";
             $button_value = "Ajouter";
+            $courses = $course->findAll();
             require "Admin/Views/modify-planning.php";
         }
     }
@@ -51,11 +52,10 @@ class TimeController extends MainController
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $id = $course->id;
             $infos = [
-                'day' => $_POST["day"],
-                'starting-time' => $_POST["starting-time"],
-                'ending-time'   => $_POST["ending-time"],
+                'day' => filter_input(INPUT_POST, "day", FILTER_SANITIZE_NUMBER_INT),
+                'starting-time' => filter_input(INPUT_POST, "starting-time", FILTER_SANITIZE_FULL_SPECIAL_CHARS),
+                'ending-time'   => filter_input(INPUT_POST, "ending-time", FILTER_SANITIZE_FULL_SPECIAL_CHARS),
                 'course_id'     => $id,
-                'user_id'       => "1"
             ];
             $this->object->update($infos, $id);
             header("location: /Time");

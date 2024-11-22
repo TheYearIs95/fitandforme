@@ -13,7 +13,7 @@ include($_SERVER["DOCUMENT_ROOT"] . "/Admin/Views/_blocks/doctype.php");
     <main class="modify-user-main">
         <h2><?= $page_title; ?></h2>
         <div class="modify-user-container content">
-            <form class="modify-user-form" action="" method="POST">
+            <form class="modify-user-form" action="" method="POST" enctype="multipart/form-data">
                 <label for="event-title">Titre:</label> <br>
                 <input type="text" name="event-title" value="<?php
                                                                 if ($page_title === "Modifier évènement") {

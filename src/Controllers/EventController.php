@@ -24,11 +24,12 @@ class EventController extends MainController
     {
         $this->isAutheticated();
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $this->uploadImage("event-image");
             $infos = [
-                'title'     => $_POST["event-title"],
-                'text'      => $_POST["event-description"],
-                'image'     => $_POST["event-image"],
-                'user_id'   => "1"
+                'title'     => filter_input(INPUT_POST, "event-title", FILTER_SANITIZE_FULL_SPECIAL_CHARS),
+                'text'      => filter_input(INPUT_POST, "event-description", FILTER_SANITIZE_FULL_SPECIAL_CHARS),
+                'image'     => $_FILES["event-image"]['name'],
+                'user_id'   => $_SESSION["auth"]->id
             ];
             $this->object->insert($infos);
             header("location: /event");
@@ -42,14 +43,14 @@ class EventController extends MainController
     {
         $this->isAutheticated();
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $description = $_POST["event-description"];
+            $description = filter_input(INPUT_POST, "event-description", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $infos = [
-                'title'     => $_POST["event-title"],
+                'title'     => filter_input(INPUT_POST, "event-title", FILTER_SANITIZE_FULL_SPECIAL_CHARS),
                 'text'      => $description,
-                'user_id'   => "1"
             ];
-            if (!empty($_POST["event-image"])) {
-                $infos['image'] = $_POST["event-image"];
+            if (!empty($_FILES["event-image"])) {
+                $this->uploadImage("event-image");
+                $infos['image'] = $_FILES["event-image"]['name'];
             }
             $this->object->update($infos, $id);
             header("location: /event");

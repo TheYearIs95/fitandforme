@@ -26,9 +26,9 @@ class PricingController extends MainController
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $infos = [
                 'type'      => $_POST["formula"],
-                'session'   => $_POST["session"],
-                'price'     => $_POST["price"],
-                'user_id'   => "1"
+                'session'   => filter_input(INPUT_POST, "session", FILTER_SANITIZE_FULL_SPECIAL_CHARS),
+                'price'     => filter_input(INPUT_POST, "price", FILTER_SANITIZE_NUMBER_FLOAT),
+                'user_id'   => $_SESSION["auth"]->id
             ];
             $this->object->insert($infos);
             header("location: /pricing");
@@ -42,12 +42,11 @@ class PricingController extends MainController
     {
         $this->isAutheticated();
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $description = $_POST["event-description"];
             $infos = [
                 'type'      => $_POST["formula"],
-                'session'   => $_POST["session"],
-                'price'     => $_POST["price"],
-                'user_id'   => "1"
+                'session'   => filter_input(INPUT_POST, "session", FILTER_SANITIZE_FULL_SPECIAL_CHARS),
+                'price'     => filter_input(INPUT_POST, "price", FILTER_SANITIZE_NUMBER_FLOAT),
+                'user_id'   => $_SESSION["auth"]->id
             ];
 
             $this->object->update($infos, $id);
