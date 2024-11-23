@@ -26,7 +26,7 @@ class CourseController extends MainController
     {
         $this->isAutheticated();
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $this->uploadImage("event-image");
+            $this->uploadImage("course-image");
             $infos = [
                 'title'     => filter_input(INPUT_POST, "course-name", FILTER_SANITIZE_FULL_SPECIAL_CHARS),
                 'text'      => filter_input(INPUT_POST, "course-description", FILTER_SANITIZE_FULL_SPECIAL_CHARS),

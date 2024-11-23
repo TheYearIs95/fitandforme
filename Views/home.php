@@ -1,11 +1,7 @@
 <?php
-// require_once "vendor/autoload.php";
+include($_SERVER["DOCUMENT_ROOT"] . "/Public/_blocks/head.php");
 ?>
-
-
 <title>Fit and Forme</title>
-<link rel="stylesheet" href="/public/css/styles.css">
-<link rel="icon" type="image/x-icon" href="/public/img/icon/favicon-32x32.png">
 </head>
 
 <body>

@@ -1,18 +1,8 @@
 <?php
-require_once "vendor/autoload.php";
+include($_SERVER["DOCUMENT_ROOT"] . "/Public/_blocks/head.php");
 ?>
-
-<!DOCTYPE html>
-<html lang="fr">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Planning & tarifs</title>
-    <link rel="stylesheet" href="/Public/css/styles.css">
-    <link rel="stylesheet" href="/Public/css/planning.css">
-    <link rel="icon" type="image/x-icon" href="/public/img/icon/favicon-32x32.png">
-
+<link rel="stylesheet" href="/Public/css/planning.css">
+<title>Planning & tarifs</title>
 </head>
 
 <body>

@@ -1,17 +1,7 @@
 <?php
-require_once "vendor/autoload.php";
+include($_SERVER["DOCUMENT_ROOT"] . "/Public/_blocks/head.php");
 ?>
-
-<!DOCTYPE html>
-<html lang="fr">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fit and Forme</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/x-icon" href="/public//public/img/icon/favicon-32x32.png">
-
+<title>Fit and Forme</title>
 </head>
 
 <body>

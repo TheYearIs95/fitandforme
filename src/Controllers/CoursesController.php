@@ -15,7 +15,6 @@ class CoursesController
 
     public function index()
     {
-        // $courses = $this->object->findAll();
         require "./Views/cours.php";
     }
 }

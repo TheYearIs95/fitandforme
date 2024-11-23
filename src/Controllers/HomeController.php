@@ -17,7 +17,6 @@ class HomeController
 
     public function index()
     {
-        // $courses = $this->object->findAll();
         require "./Views/home.php";
     }
 }
