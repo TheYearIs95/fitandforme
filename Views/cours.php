@@ -12,7 +12,7 @@ include($_SERVER["DOCUMENT_ROOT"] . "/Public/_blocks/head.php");
         <a href="/" class="logo unbounded">Fit and Forme</a>
         <div class="burger-icon">
             <label class="burger" for="burger">
-                <input class="line" type="checkbox" id="burger" />
+                <input class="line" type="checkbox" id="burger">
             </label>
         </div>
 

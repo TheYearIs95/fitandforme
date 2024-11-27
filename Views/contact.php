@@ -31,15 +31,15 @@ include($_SERVER["DOCUMENT_ROOT"] . "/Public/_blocks/head.php");
             <form action="" method="POST" class="contact-form">
                 <div class="form-group">
                     <label for="lastname">Nom</label>
-                    <input type="text" placeholder="Votre nom" name="lastname">
+                    <input type="text" placeholder="Votre nom" name="lastname" id="lastname">
                 </div>
                 <div class="form-group">
                     <label for="firstname">Prénom</label>
-                    <input type="text" placeholder="Votre prénom" name="firstname">
+                    <input type="text" placeholder="Votre prénom" name="firstname" id="firstname">
                 </div>
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" placeholder="Votre e-mail" name="email">
+                    <input type="email" placeholder="Votre e-mail" name="email" id="email">
                 </div>
                 <div class="form-group">
                     <label for="message">Message</label>

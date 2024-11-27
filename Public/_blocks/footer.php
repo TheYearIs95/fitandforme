@@ -1,6 +1,6 @@
 <footer class="footer">
     <div class="footer-logo footer-section logo footer-left">
-        <a href="index.html" class="unbounded footer-logo-link">Fit and Forme</a href="index.html">
+        <a href="index.html" class="unbounded footer-logo-link">Fit and Forme</a>
         <button class="news-button courses-button contact-button">Contactez-nous</button>
     </div>
 
