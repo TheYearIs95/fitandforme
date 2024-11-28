@@ -8,59 +8,37 @@ class Router
 {
     public function start()
     {
-        //retirer le dernier '/' de l'URL
+        // Récupère l'URI actuelle
         $uri = $_SERVER['REQUEST_URI'];
-        //on verifie que uri nest pas vide et se termine par un /
+
+        // Supprime le '/' final si nécessaire et redirige avec un code 301
         if (!empty($uri) && $uri != '/' && $uri[-1] === "/") {
-            //si oui j'enelve le /
             $uri = substr($uri, 0, -1);
-
-
-            //code de redirection permanante
             http_response_code(301);
-
-            //rediriger
             header('Location: ' . $uri);
         }
 
+        // Transforme l'URL en paramètres sous forme d'un tableau
+        $params = isset($_GET['url']) ? explode('/', $_GET['url']) : [''];
 
-        //Gerer les parametres URL. controlleur methode parametre = Partner/update/3
-        //separer les parametres
-        $params = [''];
-        if (isset($_GET['url'])) {
-            $params = explode('/', $_GET['url']);
-        }
         if ($params[0] != '') {
-            //on a au moins un parametre
-            //recuperer le nom du controller - Maj+namespace+controller
+            // Détermine le contrôleur à partir du premier paramètre
             $controller = "\\App\\Controllers\\" . ucfirst(array_shift($params)) . 'Controller';
-            
-            //instanciation du controller
             $controller = new $controller;
-            
-            //recuperer le 2eme parametres url
-            // $action = (isset($params[0])) ? array_shift($params) : 'index';
-            
-            if (isset($params[0])) {
-                $action = array_shift($params);
-            } else {
-                $action = 'index';
-            }
-            
+
+            // Récupère l'action ou utilise 'index' par défaut
+            $action = isset($params[0]) ? array_shift($params) : 'index';
+
             if (method_exists($controller, $action)) {
-                //si ya encore des parametres 
-                // (isset($params[0])) ? $controller->action($params) : $controller->action();
-                if (isset($params[0])) {
-                    $controller->$action(...$params);
-                } else {
-                    $controller->$action();
-                }
+                // Exécute l'action avec ou sans paramètres
+                $controller->$action(...$params);
             } else {
+                // Retourne une erreur 404 si l'action n'existe pas
                 http_response_code(404);
                 echo 'Page introuvable';
             }
         } else {
-            //Sinon on instancie le controller par defaut 
+            // Charge le contrôleur et l'action par défaut
             $controller = new MainController;
             $controller->index();
         }

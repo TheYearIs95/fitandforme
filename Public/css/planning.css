@@ -181,6 +181,18 @@
 
 /* ############################################ MEDIA QUERIES ################################################# */
 
+@media (max-width: 1100px) {
+    .pricing-grid-container {
+        grid-template-columns: 1fr;
+    }
+
+    .left-side, .right-side {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
+
 @media (max-width: 900px) {
     .planning {
         grid-template-columns: 1fr;
@@ -193,16 +205,5 @@
     }
 }
 
-@media (max-width: 1100px) {
-    .pricing-grid-container {
-        grid-template-columns: 1fr;
-    }
-
-    .left-side, .right-side {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-}
 
 /* ############################################ FIN MEDIA QUERIES ############################################# */
