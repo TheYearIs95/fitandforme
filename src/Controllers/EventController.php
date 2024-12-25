@@ -21,23 +21,35 @@ class EventController extends MainController
     }
 
     public function create()
-    {
-        $this->isAutheticated();
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $this->uploadImage("event-image");
-            $infos = [
-                'title'     => filter_input(INPUT_POST, "event-title", FILTER_SANITIZE_FULL_SPECIAL_CHARS),
-                'text'      => filter_input(INPUT_POST, "event-description", FILTER_SANITIZE_FULL_SPECIAL_CHARS),
-                'image'     => $_FILES["event-image"]['name'],
-                'user_id'   => $_SESSION["auth"]->id
-            ];
-            $this->object->insert($infos);
-            header("location: /event");
-        }
-        $page_title     = "Ajouter évènement";
-        $button_value   = "Ajouter";
-        require "Admin/Views/modify-event.php";
+{
+    // Vérifie que l'utilisateur est authentifié avant d'accéder à la page
+    $this->isAutheticated();
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        
+        // Appel de la méthode pour télécharger l'image
+        $this->uploadImage("event-image");
+
+        // Récupération et nettoyage des données du formulaire
+        $infos = [
+            'title'     => filter_input(INPUT_POST, "event-title", FILTER_SANITIZE_FULL_SPECIAL_CHARS),
+            'text'      => filter_input(INPUT_POST, "event-description", FILTER_SANITIZE_FULL_SPECIAL_CHARS),
+            'image'     => $_FILES["event-image"]['name'],
+            'user_id'   => $_SESSION["auth"]->id
+        ];
+
+        // Insertion des données dans la base de données
+        $this->object->insert($infos);
+
+        // Redirection vers la page des événements si c'est ok
+        header("location: /event");
     }
+    $page_title     = "Ajouter évènement";
+    $button_value   = "Ajouter";
+
+    // Inclusion de la vue modify-event
+    require "Admin/Views/modify-event.php";
+}
+
 
     public function update($id)
     {
